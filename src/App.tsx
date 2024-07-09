@@ -1,11 +1,17 @@
 import "./App.css";
-import TaskList from "./state-management/TaskList";
+import AuthProvider from "./state-management/AuthProvider";
+import LoginStatus from "./state-management/LoginStatus";
+import TaskList from "./state-management/tasks/TaskList";
+import TasksProvider from "./state-management/tasks/TasksProvider";
 
 function App() {
   return (
-    <>
-      <TaskList />
-    </>
+    <AuthProvider>
+      <TasksProvider>
+        <LoginStatus />
+        <TaskList />
+      </TasksProvider>
+    </AuthProvider>
   );
 }
 
